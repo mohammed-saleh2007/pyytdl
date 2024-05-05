@@ -29,7 +29,7 @@ pkg install -y python python-pip
 ```
 - first, get pytube via pip
 ```
-pip3 install pytube
+pip install pytube
 ```
 
 - run it by
