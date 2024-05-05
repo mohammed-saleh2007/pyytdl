@@ -1,7 +1,7 @@
 from pytube import YouTube
 
 
-url = "https://www.youtube.com/watch?v=Cl5Vkd4N03Q"
+url = input("video_url: ")
 
 video_yt = YouTube(url)
 
