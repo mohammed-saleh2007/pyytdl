@@ -9,19 +9,18 @@ yt = YouTube(video_url)
 # Get the available streams for the video
 streams = yt.streams
 
-# Extract the unique video resolutions
-resolutions = set(stream.resolution for stream in streams if stream.resolution)
-
-# Print the available video qualities
-print("Available video qualities:")
-for resolution in sorted(resolutions):
-    print(resolution)
-
 # Get the desired content type (video or audio) from the user
 content_type = input("Do you want to download video or audio? (Enter 'video' or 'audio'): ")
 
 # If the user wants to download video, ask for the desired video quality
 if content_type.lower() == 'video':
+    # Extract the unique video resolutions
+    resolutions = set(stream.resolution for stream in streams if stream.resolution)
+
+    # Print the available video qualities
+    print("Available video qualities:")
+    for resolution in sorted(resolutions):
+        print(resolution)
     video_quality = input("Please enter the video quality (e.g., 720p): ")
 
     # Find the video stream with the specified quality
