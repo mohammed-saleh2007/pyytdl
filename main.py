@@ -1,47 +1,37 @@
 from pytube import YouTube
 
-# Get the video link from the user
-video_url = input("Please enter the video link: ")
 
-# Create a YouTube object
-yt = YouTube(video_url)
+url = "https://www.youtube.com/watch?v=Cl5Vkd4N03Q"
 
-# Get the available streams for the video
-streams = yt.streams
+video_yt = YouTube(url)
 
-# Get the desired content type (video or audio) from the user
-content_type = input("Do you want to download video or audio? (Enter 'video' or 'audio'): ")
+print(video_yt.title)
+print("Thumbnail", video_yt.thumbnail_url)
 
-# If the user wants to download video, ask for the desired video quality
-if content_type.lower() == 'video':
-    # Extract the unique video resolutions
-    resolutions = set(stream.resolution for stream in streams if stream.resolution)
+def resos(yt):
+    streams = yt.streams.filter(file_extension='mp4', progressive=True).order_by("resolution")
+    reso_list = {}
+    
+    for stream in streams:
+        reso_list[f"{stream.resolution}@{stream.fps}"] = [stream.resolution, stream.fps]
 
-    # Print the available video qualities
-    print("Available video qualities:")
-    for resolution in sorted(resolutions):
-        print(resolution)
-    video_quality = input("Please enter the video quality (e.g., 720p): ")
+    return reso_list
 
-    # Find the video stream with the specified quality
-    video_stream = streams.filter(only_video=True, resolution=video_quality).first()
 
-    # Check if the video stream exists
-    if video_stream:
-        output_filename = input("Enter the output filename (including extension): ")
-        video_stream.download(filename=output_filename)
-        print("Video downloaded successfully.")
-    else:
-        print(f"No video available in {video_quality} resolution.")
-elif content_type.lower() == 'audio':
-    # Find the audio stream
-    audio_stream = streams.filter(only_audio=True).first()
+def video_resolution(reso_list):
+    print("available Qulaities")
+    for i in reso_list.keys():
+        print(i)
+        
+    return input("what do you want? (ex: 720p@30): ")
 
-    if audio_stream:
-        output_filename = input("Enter the output filename (including extension): ")
-        audio_stream.download(filename=output_filename)
-        print("Audio downloaded successfully.")
-    else:
-        print("No audio available.")
-else:
-    print("Invalid content type.")
+def dl_video(yt, reso, reso_list):
+    for i in reso_list.keys():
+        if i == reso:
+            video_dl = reso_list[i]
+    print(video_dl)
+    yt.streams.filter(res=video_dl[0], fps=video_dl[1]).first().download()
+
+dl_video(video_yt, video_resolution(resos(video_yt)), resos(video_yt))
+
+
