@@ -25,7 +25,7 @@ cd pytydl
 - get python and pip (ex: on termux)
 ```
 pkg update
-pkg install -y python3 python3-pip
+pkg install -y python python-pip
 ```
 - first, get pytube via pip
 ```
