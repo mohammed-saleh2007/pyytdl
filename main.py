@@ -9,7 +9,7 @@ print(video_yt.title)
 print("Thumbnail", video_yt.thumbnail_url)
 
 def resos(yt):
-    streams = yt.streams.filter(file_extension='mp4', progressive=True).order_by("resolution")
+    streams = yt.streams.filter(file_extension='mp4').order_by("resolution")
     reso_list = {}
     
     for stream in streams:
