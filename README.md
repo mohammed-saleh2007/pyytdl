@@ -19,7 +19,7 @@ A script Helps you to download videos from YouTube just you need the url
 # How To use?
 - clone the repo
 ```
-git clone https://github.com/mohammed-saleh2007/pytydl
+git clone https://github.com/mohammed-saleh2007/pyytdl
 cd pytydl
 ```
 - get python and pip (ex: on termux)
