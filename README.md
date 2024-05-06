@@ -44,7 +44,6 @@ pip install pytube
 python3 main.py
 ```
 
-<<<<<<< HEAD
 ## GUI
 - clone the repo
 ```
