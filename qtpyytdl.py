@@ -43,9 +43,18 @@ class InputDialog(QWidget):
         for stream in streams:
             reso_list[f"{stream.resolution}@{stream.fps}"] = [stream.resolution, stream.fps]
 
+        size = yt.streams.get_lowest_resolution().filesize_mb
+        lable = QLabel(f"file size(Lowest resolution): {size} MB")
+        self.layout.addWidget(lable)
+
+        size = yt.streams.get_highest_resolution().filesize_mb
+        lable = QLabel(f"file size(highest resolution): {size} MB")
+        self.layout.addWidget(lable)
+
         # Add title label
         label = QLabel(yt.title)
         self.layout.addWidget(label)
+
         self.setWindowTitle(f"Qt Python YouTube Videos Downloader | {yt.title}")
 
         # Add thumbnail
@@ -98,11 +107,16 @@ class InputDialog(QWidget):
         for i in reso_list.keys():
             if i == reso:
                 video_dl = reso_list[i]
-        
+
+        label = QLabel(f"Downloading Video {yt.title}.mp4 ...")
+        self.layout.addWidget(label)  
+
         yt.streams.filter(res=video_dl[0], fps=video_dl[1]).first().download()
         
         self.show_message("Downloaded!", f"Your Video {yt.title} Downloaded Without any errors")
         self.status_bar.showMessage(f"Your Video {yt.title} Downloaded Without any errors", 10000)
+        label = QLabel(f"Video {yt.title}.mp4 Downloaded!\nRelunch the app to download more")
+        self.layout.addWidget(label) 
 
     def show_message(self, title, message):
         msg_box = QMessageBox()
