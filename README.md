@@ -30,7 +30,7 @@ pkg install -y python python-pip
 ```
 - first, get pytube via pip
 ```
-pip install pytube
+python -m pip install git+https://github.com/pytube/pytube
 ```
 
 - run it by
@@ -52,6 +52,11 @@ or via pip on windows
 ```
 pip install -r requermints.txt
 ```
+for up-to-date version of pytube:
+```
+python -m pip install git+https://github.com/pytube/pytube
+```
+sometimes pip version of pytube be outdated or not working 
 - run the program:
 ```
 python qtpyytdl.py
