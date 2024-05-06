@@ -8,10 +8,10 @@ A script Helps you to download videos from YouTube just you need the url
  - you can choose Video Quality
 
 # ToDO
-* [*] make it GUI application
+* [x] make it GUI application
 * [ ] add audio only selection
 * [ ] make it works via argements and parametrs
-* [*] build for windows and linux
+* [x] build for windows and linux
 * [ ] make it easy to run (add installer or pkgs type)
 * [ ] make android version
 * [ ] add abilty to make a defualt file name for video and path with saved configration file
