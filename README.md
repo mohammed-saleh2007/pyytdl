@@ -8,19 +8,27 @@ A script Helps you to download videos from YouTube just you need the url
  - you can choose Video Quality
 
 # ToDO
-* [-] make it GUI application
+* [*] make it GUI application
 * [ ] add audio only selection
 * [ ] make it works via argements and parametrs
-* [ ] build for windows and linux
+* [*] build for windows and linux
 * [ ] make it easy to run (add installer or pkgs type)
 * [ ] make android version
 * [ ] add abilty to make a defualt file name for video and path with saved configration file
 
+# How To use?
+## CLI
+- clone the repo
+```
+git clone https://github.com/mohammed-saleh2007/pyytdl
+cd pyytdl
+=======
 # How To use (CLI version)?
 - clone the repo
 ```
 git clone https://github.com/mohammed-saleh2007/pyytdl
 cd pytydl
+>>>>>>> 47e8b4d9e32276004ba329377c746a4958bafd6b
 ```
 - get python and pip (ex: on termux)
 ```
@@ -37,4 +45,26 @@ pip install pytube
 python3 main.py
 ```
 
+<<<<<<< HEAD
+## GUI
+- clone the repo
+```
+git clone https://github.com/mohammed-saleh2007/pyytdl
+cd pyytdl
+```
+- get python and pip (ex: on Arch)
+```
+pacman -Syu pyside6 python-pip python-pytube python-pip python-requests
+```
+or via pip on windows
+```
+pip install -r requermints.txt
+```
+- run the program:
+```
+python qtpyytdl.py
+```
+
+## you can also use precompiled version on releases page
+you can find it [here](https://github.com/mohammed-saleh2007/pyytdl/releases/tag/stable)
 
