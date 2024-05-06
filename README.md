@@ -22,12 +22,6 @@ A script Helps you to download videos from YouTube just you need the url
 ```
 git clone https://github.com/mohammed-saleh2007/pyytdl
 cd pyytdl
-=======
-# How To use (CLI version)?
-- clone the repo
-```
-git clone https://github.com/mohammed-saleh2007/pyytdl
-cd pytydl
 ```
 - get python and pip (ex: on termux)
 ```
