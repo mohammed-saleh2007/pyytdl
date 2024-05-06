@@ -28,7 +28,6 @@ cd pyytdl
 ```
 git clone https://github.com/mohammed-saleh2007/pyytdl
 cd pytydl
->>>>>>> 47e8b4d9e32276004ba329377c746a4958bafd6b
 ```
 - get python and pip (ex: on termux)
 ```
